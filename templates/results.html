@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<body style="background:#E9ECEF !important;">
+<div class="jumbotron text-center">
+	<div class="panel panel-primary">
+	<div class="panel-body">
+		<div class="row">
+		 <div class="col"></div>
+		 <div class="col-6">
+			 <h1 class="display-4">TweetBot</h1>
+  <p class="lead">Analysis for @{{ result }}</p>
+  <div class="p-3 mb-2 bg-light text-dark text-left"><h4>Account Activity</h4>
+  <p class="lead"><font size="-0.5">Date of account creation compared against number of tweets per day</font></p>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1"><div class="alert alert-{{ menu_1 }} text-center" role="alert"><font size="-1">{{ activity }} Probability</font></div></a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse text-center">
+      <div class="panel-body"> @{{ result }} Tweets {{ perday }} times per day, <a href="https://blog.hubspot.com/blog/tabid/6307/bid/4594/Is-22-Tweets-Per-Day-the-Optimum.aspx" target="_blank">the average is 22.</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="p-3 mb-2 bg-light text-dark text-left"><h4>Image match</h4>
+<p class="lead"><font size="-0.5">To fool users into being a genuine person, bots often pull the images from an array of images online.</font></p>
+<div class="panel-group">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" href="#collapse2"><div class="alert alert-{{ menu_2 }} text-center" role="alert"><font size="-1">{{ image }} Probability</font></div></a>
+		</h4>
+	</div>
+	<div id="collapse2" class="panel-collapse collapse text-center">
+	  <div class="panel-body"> @{{ result }}'s avatar matches these results from the web:<br> Partial matches: {{ partial }}<br> Full matches: {{ full }}<br> Web Page Matches: {{ page }}<br> Web Entity matches: {{ entity }}<br> <a href="https://cloud.google.com/vision/#vision-api-demo" target="_blank">via Google Vision</a></div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="p-3 mb-2 bg-light text-dark text-left"><h4>Interactions per Tweets</h4>
+<p class="lead"><font size="-0.5">Interactions per tweets returns the average interactions per tweet</font></p>
+<div class="panel-group">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" href="#collapse3"><div class="alert alert-{{ menu_3 }} text-center" role="alert"><font size="-1">{{ lowpost }} Probability</font></div></a>
+		</h4>
+	</div>
+	<div id="collapse3" class="panel-collapse collapse text-center">
+		<div class="panel-body"> @{{ result }} has an interaction rate of {{ perfollower }} per follower, <a href="https://blog.scrunch.com/what-is-a-good-engagement-rate-on-twitter" target="_blank">which is {{ lowpost }}.</a></div>
+	</div>
+</div>
+</div>
+</div>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Back to Home</a>
+    <!--></-->
+    <h6 class="display-6">© Ben Cowley</h6>  </div>
+		 <div class="col"></div>
+	 </div>
+	</div>
+	</div>
+	</div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+{% endblock %}

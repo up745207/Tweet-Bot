@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<body style="background:#E9ECEF !important;">
+<div class="jumbotron text-center">
+	<div class="panel panel-primary">
+	<div class="panel-body">
+		<div class="row">
+		 <div class="col"></div>
+		 <div class="col-6">
+			 <h1 class="display-4">About</h1>
+  <div class="p-3 mb-2 bg-light text-dark text-left"><div class="p-3 mb-2 bg-light text-dark text-left"><h4>Staying Safe Online</h4>
+  <p class="lead"><font size="-0.5">TweetBot was made as part of a disseration project for the University Of Portsmouth, the scope of the project was a research piece that looked into the effects of political propaganda in modern age. <br>Ben Nimmo is a digital forensic, has some fantastic work <a href="https://medium.com/dfrlab/botspot-twelve-ways-to-spot-a-bot-aedc7d9c110c" target="_blank">here</a>, which was the inspiration for the project.<p></font></p>
+	<hr>
+	<h4>How it Works</h4>
+  <p class="lead"><font size="-0.5">The site currently is hosted locally of a Raspberry Pi and is coded in HTML, CSS & Python. The site connects to both the Twitter developer API and Google Vision to analyse twitter accounts for unhumanlike characteristics.</font></p><hr>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1"><div class="alert alert-info text-center" role="alert"><font size="-1">Change Log v1.1</font></div></a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse text-center">
+      <div class="panel-body"><p>• Minor Bug Fixes and Improvements</p><p>• Added About page</p><p><a href="https://github.com/up745207/Tweet-Bot" target="_blank">View on github</a><p></div>
+    </div>
+  </div>
+</div>
+</div>
+	</div>
+    <h6 class="display-6">© Ben Cowley</h6>
+  </div>
+		 <div class="col"></div>
+	 </div>
+	</div>
+	</div>
+	</div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+{% endblock %}
